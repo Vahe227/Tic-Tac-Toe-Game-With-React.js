@@ -32,7 +32,6 @@ src/ directory: Contains the core React application source code.
 * **`App.css:`** This file makes the program look nicer, the code for which I got from Gemini 
 * **`package.json:`** This file lists the project's metadata, dependencies, and scripts, essential for managing the project's environment.
 
-––– 
 
 ## 🚀 Getting Started
 
