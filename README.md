@@ -20,11 +20,11 @@ This project shows how we can create a tic-tac-toe game using React.js. This pro
 
 The program follows a somewhat modular architecture and you can learn more about it here:
 
-* **`index.html:` The main HTML file where the React application is mounted.
-* **`manifest.json:` A web app manifest file providing meta-information about the web application (e.g., name, icons, display mode) for Progressive Web App (PWA) features.
-* **`favicon.ico:` The favicon displayed in the browser tab.
-* **`logo192.png / logo512.png:` Default React logos, not directly used in the application's UI, but important for PWA icons.
-* **`robots.txt:` A file providing instructions to web crawlers about which parts of the site they can or cannot crawl.
+* **`index.html:`** The main HTML file where the React application is mounted.
+* **`manifest.json:`** A web app manifest file providing meta-information about the web application (e.g., name, icons, display mode) for Progressive Web App (PWA) features.
+* **`favicon.ico:`** The favicon displayed in the browser tab.
+* **`logo192.png / logo512.png:`** Default React logos, not directly used in the application's UI, but important for PWA icons.
+* **`robots.txt:`** A file providing instructions to web crawlers about which parts of the site they can or cannot crawl.
 
 src/ directory: Contains the core React application source code.
 
