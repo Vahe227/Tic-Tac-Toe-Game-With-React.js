@@ -1,0 +1,167 @@
+/* Import Google Font - Inter */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+
+/* Basic Body Styles for Centering and Background */
+body {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh; /* Ensures it takes full viewport height */
+  background: linear-gradient(135deg, #a8c0ff, #3f2b96); /* Elegant gradient background */
+  font-family: 'Inter', sans-serif;
+  color: #333;
+  overflow: hidden; /* Prevent scrollbars */
+}
+
+/* Container for the entire game board and status */
+.board-container {
+  background-color: rgba(255, 255, 255, 0.95); /* Slightly transparent white background */
+  padding: 30px;
+  border-radius: 20px; /* Rounded corners for the container */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); /* Soft shadow for depth */
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Կենտրոնացնում է հորիզոնական առանցքով */
+  gap: 20px; /* Տարածություն բաղադրիչների միջև */
+  animation: fadeIn 1s ease-out; /* Fade-in animation for the whole board */
+}
+
+/* Keyframe for overall fade-in */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Status Text (Next Player / Winner) */
+.status {
+  font-size: 2.2em; /* Larger font size */
+  font-weight: 700; /* Bolder text */
+  color: #3f2b96; /* Matches gradient color */
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+/* Board Rows Layout */
+.board-row {
+  display: flex; /* Use flexbox for horizontal alignment of squares */
+  margin-top: -1px; /* Overlap borders for a clean grid */
+}
+
+.board-row:first-child {
+  margin-top: 0; /* No top margin for the first row */
+}
+
+/* Individual Square Button Styles */
+.square {
+  background: #ffffff; /* White background for squares */
+  border: 2px solid #999; /* Slightly thicker border for definition */
+  font-size: 3.5em; /* Very large font for X/O */
+  font-weight: 800; /* Extra bold for visibility */
+  line-height: 1.5; /* Adjust line height for vertical centering */
+  height: 100px; /* Larger square size */
+  width: 100px; /* Larger square size */
+  display: flex; /* Use flexbox to center content */
+  justify-content: center; /* Horizontally center X/O */
+  align-items: center; /* Vertically center X/O */
+  margin-right: -2px; /* Overlap borders */
+  margin-top: -2px; /* Overlap borders */
+  padding: 0;
+  cursor: pointer;
+  outline: none; /* Remove outline on focus */
+  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease; /* Smooth transitions for hover/click */
+  border-radius: 10px; /* Slightly rounded corners for squares */
+  color: #007bff; /* Default color for X */
+}
+
+/* Specific colors for X and O */
+.square:nth-child(even) {
+  color: #dc3545; /* Reddish for O (example) */
+}
+
+/* Remove margin for the last square in a row to avoid extra space */
+.board-row .square:last-child {
+  margin-right: 0;
+}
+
+/* Hover effect for squares */
+.square:hover {
+  background-color: #f0f0f0; /* Light gray on hover */
+  transform: scale(1.05); /* Slightly enlarge on hover */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15); /* Add shadow on hover */
+}
+
+/* Active state (when pressed) for squares */
+.square:active {
+  transform: scale(0.95); /* Slightly shrink when pressed */
+  background-color: #e0e0e0; /* Darker gray when active */
+}
+
+/* Animation for the X/O appearing */
+.square.clicked {
+  animation: popIn 0.3s ease-out; /* Pop-in animation */
+}
+
+@keyframes popIn {
+  from {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Responsive Adjustments (Optional, but good practice) */
+@media (max-width: 600px) {
+  .board-container {
+    padding: 20px;
+    margin: 15px; /* Add some margin on smaller screens */
+  }
+
+  .status {
+    font-size: 1.8em;
+  }
+
+  .square {
+    height: 80px;
+    width: 80px;
+    font-size: 2.8em;
+  }
+}
+
+/* Styles for the restart link */
+.restart-link {
+  display: block; /* Change display to block so that margin: auto works */
+  background-color: #007bff; /* Blue color */
+  color: white;
+  padding: 12px 25px;
+  font-size: 1.2em;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  text-decoration: none; /* Removes the underscore from the link */
+  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  margin: 20px auto 0 -20px; /* Top margin 20px, right/left margin auto to center */
+  max-width: fit-content; /* To prevent the width from being completely spread out */
+}
+
+.restart-link:hover {
+  background-color: #0056b3; /* Dark blue on hover */
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+.restart-link:active {
+  background-color: #004085; /* Darker blue when clicked */
+  transform: translateY(0);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
